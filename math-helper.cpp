@@ -20,3 +20,42 @@ int pow_modulo(int a, int b, int c) {
 	if(b%2 == 0) return result;
 	else return a * result % c;
 }
+
+
+// 연산 가능한 수의 범위를 초과하는 큰 수의 덧셈
+// #include <string>
+// string add_bigNumber(number 1:string, number 2:string)
+// return add_result:string
+string add_bigNumber(string a, string b) {
+	int tmp = 0;
+	string res = "", result = "";
+	
+	while(a.back() || b.back()) {
+		
+		if(a.back()) {
+			tmp += a.back()-'0';
+			a.pop_back();
+		}
+		if(b.back()) {
+			tmp += b.back()-'0';
+			b.pop_back();
+		}
+		
+		if(tmp >= 10) {
+			res.push_back(((tmp % 10)+'0'));
+			tmp /= 10;
+		}else{
+			res.push_back((tmp+'0'));
+			tmp = 0;
+		}
+	}
+	
+	if(tmp != 0) res.push_back((tmp+'0'));
+	
+	while(!res.empty()) {
+		result.push_back(res.back());
+		res.pop_back();
+	}
+	
+	return result;
+}
