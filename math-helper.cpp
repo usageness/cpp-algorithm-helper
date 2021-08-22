@@ -7,6 +7,7 @@
 * @see None
 */
 
+/** 산술 연산 **/
 
 // 분할 정복을 이용한 나머지 연산
 // int pow_modulo(Base:int, Power:int, Divisor:int)
@@ -31,7 +32,6 @@ string add_bigNumber(string a, string b) {
 	string res = "", result = "";
 	
 	while(a.back() || b.back()) {
-		
 		if(a.back()) {
 			tmp += a.back()-'0';
 			a.pop_back();
@@ -49,13 +49,21 @@ string add_bigNumber(string a, string b) {
 			tmp = 0;
 		}
 	}
-	
+
 	if(tmp != 0) res.push_back((tmp+'0'));
-	
+
 	while(!res.empty()) {
 		result.push_back(res.back());
 		res.pop_back();
 	}
-	
+
 	return result;
+}
+
+// 두 정수 중 큰 값을 반환
+// int bigger(number 1:int, number 2:int)
+// return result:int
+int bigger(int a, int b) {
+	int res = a > b ? a : b;
+	return res;
 }
