@@ -67,3 +67,11 @@ int bigger(int a, int b) {
 	int res = a > b ? a : b;
 	return res;
 }
+
+// 두 정수 중 작은 값을 반환
+// int smaller(number 1:int, number 2:int)
+// return result:int
+int smaller(int a, int b) {
+	int res = a < b ? a : b;
+	return res;
+}
